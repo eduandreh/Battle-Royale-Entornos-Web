@@ -1,11 +1,12 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import HeaderComponent from './components/HeaderComponent.vue'
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <HelloWorld/>
+  <header><HeaderComponent/></header>
+  
+    <RouterView />
+  
 </template>
 
-<style scoped>
-
-</style>
