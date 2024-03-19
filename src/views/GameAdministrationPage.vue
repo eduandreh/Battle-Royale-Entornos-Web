@@ -1,8 +1,13 @@
-<template>
-  <div class="flex flex-col items-center justify-center min-h-screen py-2">
+<script setup>
+import { Container } from 'postcss';
+import JoinComponent from '../components/JoinComponent.vue';
 
-    <h1 className="text-3xl font-bold underline">
-      Hola de Nuevo
-    </h1>
+</script>
+<template>
+  <article>
+  <div class="flex flex-col items-center justify-center h-screen">
+    <JoinComponent />
   </div>
+  </article>
+  
 </template>

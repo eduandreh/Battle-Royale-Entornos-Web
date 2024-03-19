@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #272932; 
+    color: #ffffff; 
+  }
+header{
+    background-color: #34363E; 
+    color: #8F8F8F; 
+  }
+footer{
+    background-color: #272932; 
+    color: #ffffff; 
+  }
+
+
+ 
