@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        'buttons-bg': '#763DCF',
+        'buttons': '#763DCF',
+        'placeholder': '#1A1C26',
       },
     },
   },
