@@ -9,6 +9,7 @@ export default {
       colors: {
         'buttons': '#763DCF',
         'placeholder': '#1A1C26',
+        'steel': '#34363E'
       },
     },
   },

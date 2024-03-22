@@ -1,5 +1,5 @@
 <template>
-    <article class="bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center space-y-8">
+    <article class="bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
       <!-- User Image and Name -->
       <section class="flex items-center justify-center space-x-10 w-full">
         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="User" class="w-24 h-24 rounded-full mb-2">
@@ -25,7 +25,7 @@
         </section>
 
       <!-- Stats -->
-      <ul class="flex justify-between w-full p-4 bg-gray-700 rounded-lg">
+      <ul class="flex justify-between w-full p-4 bg-steel rounded-3xl">
         <li class="flex flex-col items-center">
           <span class="text-sm font-semibold">Kills</span>
           <span>25</span>
