@@ -1,8 +1,15 @@
-<template>
-    <div class="flex flex-col items-center justify-center min-h-screen py-2">
+<script setup>
+import ArenaGridComponent from '../components/ArenaGridComponent.vue';
+import EquippedAttacksComponent from '../components/EquippedAttacksComponent.vue';
+</script>
 
-      <h1 className="text-3xl font-bold underline">
-        Llegaste a la página de juego
-      </h1>
-    </div>
+<template>
+  <section class="relative">
+    <section class="justify-center align-center flex-1">
+      <ArenaGridComponent />
+    </section>
+    <section class="absolute bottom-0 left-20">
+      <EquippedAttacksComponent />
+    </section>
+  </section>
 </template>
