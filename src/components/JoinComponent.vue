@@ -7,45 +7,26 @@
                 <button class="bg-buttons text-white rounded-md w-1/4 h-10 ">Filter</button>
             </nav>
             <section class="grid grid-rows-3 grid-flow-col gap-4 m-5"> 
-                <section>
+                <section v-for="index in AvailableGamesCount" :key="index">
                     <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
                     <h3>Title 1</h3>
-                </section>
-                <section>
-                    <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
-                    <h3>Title 1</h3>
-                </section>
-                <section>
-                    <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
-                    <h3>Title 1</h3>
-                </section>
-                <section>
-                    <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
-                    <h3>Title 1</h3>
-                </section>
-                <section>
-                    <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
-                    <h3>Title 1</h3>
-                </section>
-                <section>
-                    <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
-                    <h3>Title 1</h3>
-                </section>
-                <section>
-                    <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
-                    <h3>Title 1</h3>
-                </section>
-                <section>
-                    <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
-                    <h3>Title 1</h3>
-                </section>
-                <section>
-                    <img src="https://via.placeholder.com/188x100" alt="Descripción de la imagen 1">
-                    <h3>Title 1</h3>
-                </section>
+          </section>
+                
                 
             </section>
-            <button class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8 ">Join</button>
+            <router-link to="/game"><button class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8"> Join </button>
+</router-link>
+
         </form>
     </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        AvailableGamesCount: 9 
+      };
+    }
+  };
+  </script>

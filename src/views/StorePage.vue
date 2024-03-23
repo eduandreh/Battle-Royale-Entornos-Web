@@ -1,7 +1,25 @@
+<script setup>
+import CreateAttackComponent from '../components/CreateAttackComponent.vue';
+import BuyAttackComponent from '../components/BuyAttackComponent.vue';
+import SellAttackComponent from '../components/SellAttackComponent.vue';
+</script>
+
 <template>
-    <div class="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-3xl font-bold underline">
-        Llegaste a la Tienda
-      </h1>
-    </div>
+  <section class="m-14 p-4 flex lg:gap-x-12">
+  
+    <aside class="w-1/3 justify-start">
+      <CreateAttackComponent />
+    </aside>
+    
+    <article class="flex flex-col w-2/3 justify-center">
+      <section>
+        <BuyAttackComponent />
+      </section>
+      
+      <section class="mt-10">
+        <SellAttackComponent />
+      </section>
+      
+    </article>
+  </section>
 </template>

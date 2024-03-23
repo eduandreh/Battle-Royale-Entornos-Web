@@ -1,8 +1,14 @@
+<script setup>
+import EquipAttacksComponent from '../components/EquipAttacksComponent.vue';
+import AcquiredAttacksComponent from '../components/AcquiredAttacksComponent.vue';
+</script>
+
 <template>
-    <div class="flex flex-col items-center justify-center min-h-screen py-2">
-     
-      <h1 className="text-3xl font-bold underline">
-        Hola de Nuevo
-      </h1>
-    </div>
+    <section class="justify-center align-center">
+        <EquipAttacksComponent />
+    </section>
+
+    <section class="justify-center align-center">
+        <AcquiredAttacksComponent />
+    </section>
 </template>
