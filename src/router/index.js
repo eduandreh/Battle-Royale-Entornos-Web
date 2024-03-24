@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 import PlayerManagementPage from '../views/PlayerManagementPage.vue';
 import AttackManagementPage from '../views/AttackManagementPage.vue';
@@ -15,53 +15,49 @@ const router = createRouter({
     {
       path: '/login',
       name: 'Login',
-      component: CreationPlayerPage
+      component: CreationPlayerPage,
     },
     {
-        path: '/',
-        name: 'Home',
-        component: PlayerManagementPage
-
+      path: '/',
+      name: 'Home',
+      component: PlayerManagementPage,
     },
     {
-        path: '/player-management',
-        name: 'PlayerManagement',
-        component: PlayerManagementPage
-      },
-      {
-        path: '/attack-management',
-        name: 'AttackManagement',
-        component: AttackManagementPage
-      },
-      {
-        path: '/rankings',
-        name: 'Rankings',
-        component: RankingsPage
-      },
-      {
-        path: '/player-game-history',
-        name: 'PlayerGameHistory',
-        component: PlayerGameHistoryPage
-      },
-      {
-        path: '/game-administration',
-        name: 'GameAdministration',
-        component: GameAdministrationPage
-      },
-      {
-        path: '/store',
-        name: 'Store',
-        component: StorePage
-      },
-      {
-        path: '/game',
-        name: 'Game',
-        component: GamePage
-      },
-      
-  ]
-})
+      path: '/player-management',
+      name: 'PlayerManagement',
+      component: PlayerManagementPage,
+    },
+    {
+      path: '/attack-management',
+      name: 'AttackManagement',
+      component: AttackManagementPage,
+    },
+    {
+      path: '/rankings',
+      name: 'Rankings',
+      component: RankingsPage,
+    },
+    {
+      path: '/player-game-history',
+      name: 'PlayerGameHistory',
+      component: PlayerGameHistoryPage,
+    },
+    {
+      path: '/game-administration',
+      name: 'GameAdministration',
+      component: GameAdministrationPage,
+    },
+    {
+      path: '/store',
+      name: 'Store',
+      component: StorePage,
+    },
+    {
+      path: '/game',
+      name: 'Game',
+      component: GamePage,
+    },
+  ],
+});
 
-export default router
-
-
+export default router;

@@ -11,11 +11,11 @@ import GameLogsComponent from '../components/GameLogsComponent.vue';
     </div>
     <div class="lg:w-3/4 flex flex-col">
       <div class="mb-8">
-        <StatisticsComponent/>
+        <StatisticsComponent />
       </div>
       <h2 class="text-2xl font-bold mb-8">Game History</h2>
       <div>
-        <GameLogsComponent/>
+        <GameLogsComponent />
       </div>
     </div>
   </section>
