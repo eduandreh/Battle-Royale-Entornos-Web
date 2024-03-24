@@ -1,17 +1,6 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <h2 class="text-2xl font-bold mb-4">What do you want to play?</h2>
     <form class="flex flex-col justify-start">
-      <nav class="flex flex-row w-full gap-4">
-        <input
-          type="text"
-          class="bg-placeholder rounded-xl p-4 mb-4 w-3/4"
-          placeholder="Search for favorite game"
-        />
-        <button class="bg-buttons text-white rounded-md w-1/4 h-10">
-          Filter
-        </button>
-      </nav>
       <section class="grid grid-rows-3 grid-flow-col gap-4 m-5">
         <section v-for="index in AvailableGamesCount" :key="index">
           <img
@@ -19,7 +8,7 @@
             src="https://firebasestorage.googleapis.com/v0/b/battle-royale-8ef31.appspot.com/o/Rectangle%206496.png?alt=media&token=80a5f0cc-1a84-42a6-83c6-d3188800bdba"
             alt="Descripción de la imagen 1"
           />
-          <h3>Title 1</h3>
+          <h3>Game 10x6</h3>
         </section>
       </section>
 

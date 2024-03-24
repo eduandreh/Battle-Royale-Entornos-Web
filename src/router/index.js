@@ -7,10 +7,16 @@ import PlayerGameHistoryPage from '../views/PlayerGameHistoryPage.vue';
 import GameAdministrationPage from '../views/GameAdministrationPage.vue';
 import StorePage from '../views/StorePage.vue';
 import GamePage from '../views/GamePage.vue';
+import CreationPlayerPage from '../views/CreationPlayerPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: '/login',
+      name: 'Login',
+      component: CreationPlayerPage
+    },
     {
         path: '/',
         name: 'Home',
@@ -52,6 +58,7 @@ const router = createRouter({
         name: 'Game',
         component: GamePage
       },
+      
   ]
 })
 

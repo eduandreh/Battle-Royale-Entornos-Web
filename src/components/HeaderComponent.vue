@@ -4,7 +4,7 @@
       <div class="flex lg:flex-1">
         <RouterLink to="/" class="text-sm font-semibold leading-6 text-gray-900">
           <span class="sr-only">Battle Royale</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+          <img class="h-8 w-auto" src="https://firebasestorage.googleapis.com/v0/b/battle-royale-8ef31.appspot.com/o/icons8-batalla-50%20(1).png?alt=media&token=0a8f6b03-a0be-49e6-a039-51539200cbcb" alt="logo" />
         </RouterLink>
       </div>
 
@@ -18,8 +18,8 @@
         <RouterLink to="/player-game-history" class="text-sm font-semibold leading-6 text-900">Game History</RouterLink>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-900">Log in <span
-            aria-hidden="true">&rarr;</span></a>
+        <RouterLink to="/login" class="text-sm font-semibold leading-6 text-900">Log in <span
+            aria-hidden="true">&rarr;</span></RouterLink>
       </div>
     </nav>
 

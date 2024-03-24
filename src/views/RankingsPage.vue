@@ -1,6 +1,7 @@
 <script setup>
 import PlayerListComponent from '../components/PlayerListComponent.vue';
 import PlayerInfoComponent from '../components/PlayerInfoComponent.vue';
+import GameFinderComponent from '../components/GameFinderComponent.vue';
 </script>
 
 
