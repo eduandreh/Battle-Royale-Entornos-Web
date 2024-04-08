@@ -4,14 +4,14 @@
   </section>
 
   <section class="flex flex-row gap-12 justify-center m-5">
-    <section class="bg-buttons p-6 rounded-lg text-center">
+    <article class="bg-buttons p-6 rounded-lg text-center">
       <img
         class="rounded-lg w-40 h-40"
         src="https://firebasestorage.googleapis.com/v0/b/battle-royale-8ef31.appspot.com/o/prueba.png?alt=media&token=9f8e5884-4444-43ae-8863-3615894d2018"
         alt="Handful of Buncoin"
       />
       <h4 class="mt-2">Handful of Buncoin</h4>
-    </section>
+    </article>
     <section class="bg-buttons p-6 rounded-lg text-center">
       <img
         class="rounded-lg w-40 h-40"
