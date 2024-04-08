@@ -16,10 +16,7 @@
     "plugins": [
       "vue",
       "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": "error"
-    }
+    ]
   },
     "prettier": {
       "semi": true,
