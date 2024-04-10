@@ -1,6 +1,7 @@
 <script setup>
 import ArenaGridComponent from '../components/ArenaGridComponent.vue';
 import EquippedAttacksComponent from '../components/EquippedAttacksComponent.vue';
+import MovementComponent from '../components/MovementComponent.vue';
 </script>
 
 <template>
@@ -9,9 +10,12 @@ import EquippedAttacksComponent from '../components/EquippedAttacksComponent.vue
       <h2 class="text-2xl font-bold mt-10 mx-20">Battle Royal Game</h2>
       <ArenaGridComponent />
     </section>
-    <section class="absolute bottom-0 left-20">
+    <section class="absolute bottom-2 left-20">
       <h4 class="text-xl text-white font-semibold m-2">Equipped Attacks</h4>
       <EquippedAttacksComponent />
+    </section>
+    <section class="absolute bottom-12 right-40">
+      <MovementComponent />
     </section>
   </section>
 </template>
