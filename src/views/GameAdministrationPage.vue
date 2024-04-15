@@ -12,7 +12,7 @@ import GameFinderComponent from '../components/GameFinderComponent.vue';
       <section>
         <GameFinderComponent />
       </section>
-      <JoinComponent />
+      <main><JoinComponent /></main> 
     </div>
   </section>
 </template>

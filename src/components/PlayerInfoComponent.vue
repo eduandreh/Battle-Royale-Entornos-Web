@@ -1,3 +1,88 @@
+<!-- <template>
+  <article class="bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+    <section class="flex items-center justify-center space-x-10 w-full">
+      <img :src="player.avatarUrl" alt="User" class="w-24 h-24 rounded-full mb-2"/>
+      <h1 class="text-2xl font-bold">{{ player.name }}</h1>
+    </section>
+
+    <section class="flex items-center justify-between space-x-10">
+      <div class="flex flex-col items-center">
+        <h2 class="text-lg font-semibold p-2">COINS</h2>
+        <img src="https://example.com/path-to-coin-image.png" alt="Coin" class="w-20 h-20 mr-2 p-2"/>
+        <span class="text-lg font-semibold p-2">{{ player.coins }}</span>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <h2 class="text-lg font-semibold p-9">LEVEL</h2>
+        <div class="w-full bg-gray-700 rounded-full h-5 overflow-hidden">
+          <div class="bg-purple-600 h-5" :style="{ width: player.levelProgress + '%' }"></div>
+        </div>
+        <span class="text-lg font-semibold p-9">{{ player.level }}</span>
+      </div>
+    </section>
+
+    <ul class="flex justify-between w-full p-4 bg-steel rounded-3xl">
+      <li class="flex flex-col items-center">
+        <span class="text-sm font-semibold">Kills</span>
+        <span>{{ player.kills }}</span>
+      </li>
+      <li class="flex flex-col items-center">
+        <span class="text-sm font-semibold">Games</span>
+        <span>{{ player.gamesPlayed }}</span>
+      </li>
+      <li class="flex flex-col items-center">
+        <span class="text-sm font-semibold">Time</span>
+        <span>{{ player.playTime }}</span>
+      </li>
+    </ul>
+  </article>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      player: {
+        name: '',
+        avatarUrl: '',
+        coins: 0,
+        level: 0,
+        xp: 0,
+      }
+    };
+  },
+  methods: {
+    fetchPlayerData() {
+      const playerId = 'some-player-id';
+      const url = `http://127.0.0.1:3000/players/${playerId}`;
+      
+      const headers = {
+        'Bearer': '', 
+        'Content-Type': 'application/json'
+      };
+
+      fetch(url, { method: 'GET', headers: headers })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          this.player = data;  
+        })
+        .catch(error => {
+          console.error('Error fetching player data:', error);
+        });
+    }
+  },
+  mounted() {
+    this.fetchPlayerData();
+  }
+}
+</script> -->
+
+
 <template>
   <article
     class="bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center"

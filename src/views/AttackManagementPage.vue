@@ -5,7 +5,7 @@ import AcquiredAttacksComponent from '../components/AcquiredAttacksComponent.vue
 
 <template>
   <section class="justify-center align-center p-10">
-    <EquipAttacksComponent />
+    <main><EquipAttacksComponent /></main>
   </section>
 
   <section class="justify-center align-center">

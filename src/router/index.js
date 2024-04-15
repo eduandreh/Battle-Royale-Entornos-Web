@@ -9,7 +9,7 @@ import StorePage from '../views/StorePage.vue';
 import GamePage from '../views/GamePage.vue';
 import CreationPlayerPage from '../views/CreationPlayerPage.vue';
 
-function isUserAuthenticated() {
+export function isUserAuthenticated() {
   return true;
 }
 
