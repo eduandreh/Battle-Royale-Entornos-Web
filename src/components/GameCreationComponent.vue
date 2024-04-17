@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <section class="flex flex-col">
     <h2 class="text-2xl font-bold mb-4">New Game</h2>
     <form class="flex flex-col justify-start">
       <section class="flex flex-col">
@@ -34,5 +34,5 @@
         Create Game
       </button>
     </form>
-  </div>
+  </section>
 </template>
