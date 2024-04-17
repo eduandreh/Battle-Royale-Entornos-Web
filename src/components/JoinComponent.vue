@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <section class="flex flex-col min-h-screen">
     <form class="flex flex-col justify-start">
       <section class="grid grid-rows-3 grid-flow-col gap-4 m-5">
         <article v-for="index in AvailableGamesCount" :key="index">
@@ -13,12 +13,12 @@
       </section>
 
       <router-link to="/game"
-        ><button class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8">
+        ><button type="submit" class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8">
           Join
         </button>
       </router-link>
     </form>
-  </div>
+  </section>
 </template>
 
 <script>

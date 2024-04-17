@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <section class="flex flex-col min-h-screen">
     <h2 class="text-2xl font-bold mb-4">Sell Attack</h2>
     <form class="flex flex-col">
       <section class="grid grid-rows-3 grid-flow-col gap-5">
@@ -20,7 +20,7 @@
         </section>
       </section>
     </form>
-  </div>
+  </section>
 </template>
 
 <script>

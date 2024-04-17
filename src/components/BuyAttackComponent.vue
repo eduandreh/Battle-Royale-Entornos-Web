@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <section class="flex flex-col min-h-screen">
     <h2 class="text-2xl font-bold mb-4">Buy Attack</h2>
     <form class="flex flex-col">
-      <section class="grid grid-rows-3 grid-flow-col gap-5">
+      <article class="grid grid-rows-3 grid-flow-col gap-5">
         <section
           class="bg-steel text-white p-4 rounded-lg shadow-lg flex flex-col items-center"
           v-for="index in Count"
@@ -18,9 +18,9 @@
             Buy
           </button>
         </section>
-      </section>
+      </article>
     </form>
-  </div>
+  </section>
 </template>
 
 <script>

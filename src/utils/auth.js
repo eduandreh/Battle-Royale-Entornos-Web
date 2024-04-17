@@ -2,9 +2,9 @@
 
 // Función para verificar si el usuario está autenticado
 export function isAuthenticated() {
-    const token = localStorage.getItem('authToken');
-    return !!token;  // Convertir la presencia del token a un valor booleano
-    //return false;
+    //const token = localStorage.getItem('authToken');
+    //return !!token;  // Convertir la presencia del token a un valor booleano
+    return true;
 }
 
 // Función para guardar el token en localStorage
