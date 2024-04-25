@@ -21,7 +21,10 @@ const router = createRouter({
     {
       path: '/login',
       name: 'Login',
-      component: LoginComponent
+      component: LoginComponent,
+      redirect: () => {
+        return isAuthenticated() ? '/player-management' : '/login';
+      }
     },
     {
       path: '/player-management',

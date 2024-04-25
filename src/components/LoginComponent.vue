@@ -20,6 +20,9 @@
 <script>
 import { ref } from 'vue';
 import { saveToken, isAuthenticated } from '../utils/auth';  // Utility function to save token
+import { useRouter } from 'vue-router';
+
+
 
 export default {
   name: "LoginComponent",
@@ -30,6 +33,7 @@ export default {
       img: ''
 
     });
+    const router = useRouter();
 
     const loginUser = () => {
       const apiURL = 'https://balandrau.salle.url.edu/i3/players/join';  // Update with your actual API URL
@@ -46,8 +50,11 @@ export default {
       .then(data => {
         console.log(user.value);
         if (data.token) {
+          console.log('Login successful:', data.token);
           saveToken(data.token); 
           isAuthenticated.value = true; 
+          router.push('/');
+          window.location.reload();
         } else {
           throw new Error('Authentication failed');  
         }
