@@ -57,7 +57,7 @@ export default {
       const url = `http://127.0.0.1:3000/players/${playerId}`;
       
       const headers = {
-        'Bearer': '', 
+        'Bearer': 'token', 
         'Content-Type': 'application/json'
       };
 

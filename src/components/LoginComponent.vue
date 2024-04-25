@@ -1,9 +1,11 @@
 <template>
   <form @submit.prevent="loginUser" class="space-y-6">
-    <fieldset>
-      <label for="email" class="block text-sm font-medium leading-6 text-white">Email address</label>
-      <input v-model="user.email" id="email" type="email" autocomplete="email" required class="mt-2 block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Enter your email"/>
-    </fieldset>
+    <div>
+      <label for="email" class="block text-sm font-medium leading-6 text-white">Email</label>
+      <div class="mt-2">
+        <input v-model="user.player_ID" id="player_ID" type="text" autocomplete="text" required class="block w-full rounded-md border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Enter your email"/>
+      </div>
+    </div>
 
     <fieldset>
       <label for="password" class="block text-sm font-medium leading-6 text-white">Password</label>
@@ -17,14 +19,16 @@
 
 <script>
 import { ref } from 'vue';
-import { saveToken } from '../utils/auth';  // Utility function to save token
+import { saveToken, isAuthenticated } from '../utils/auth';  // Utility function to save token
 
 export default {
   name: "LoginComponent",
   setup() {
     const user = ref({
-      email: '',
-      password: ''
+      player_ID: '',
+      password: '',
+      img: ''
+
     });
 
     const loginUser = () => {
@@ -34,12 +38,16 @@ export default {
         headers: {
           'Content-Type': 'application/json',
         },
+        
         body: JSON.stringify(user.value)
+        
       })
       .then(response => response.json())
       .then(data => {
+        console.log(user.value);
         if (data.token) {
-          saveToken(data.token);  
+          saveToken(data.token); 
+          isAuthenticated.value = true; 
         } else {
           throw new Error('Authentication failed');  
         }

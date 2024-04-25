@@ -44,7 +44,7 @@
         >
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <RouterLink to="/login" class="text-sm font-semibold leading-6 text-900"
+        <RouterLink @click="handleLogout" to="/" class="text-sm font-semibold leading-6 text-900"
           >Log out <span aria-hidden="true">&rarr;</span></RouterLink
         >
       </div>
@@ -52,4 +52,9 @@
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { logout } from '../utils/auth';
+const handleLogout = () => {
+  logout();
+}
+</script>
