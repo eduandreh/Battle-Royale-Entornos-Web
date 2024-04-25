@@ -7,8 +7,9 @@ export function isAuthenticated() {
 }
 
 // Función para guardar el token en localStorage
-export function saveToken(token) {
+export function saveToken(token, player_ID) {
     localStorage.setItem('authToken', token);
+    localStorage.setItem('id-player', player_ID);
 }
 
 export function logout() {
