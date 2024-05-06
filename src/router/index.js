@@ -85,13 +85,11 @@ const router = createRouter({
   ],
 });
 
-// Route guard to check for authentication on routes that require it
+
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !isAuthenticated()) {
-    // Redirects to login page if the route requires authentication and user is not authenticated
-    next({ name: 'Login' });
+    next({ name: 'PlayerManagement' });
   } else {
-    // Proceed to route
     next();
   }
 });

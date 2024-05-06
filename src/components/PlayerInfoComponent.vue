@@ -1,7 +1,7 @@
 <template>
   <article class="bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
     <section class="flex items-center justify-center space-x-10 w-full">
-      <img :src="player.avatarUrl" alt="User" class="w-24 h-24 rounded-full mb-2"/>
+      <img :src="player.img" alt="User" class="w-24 h-24 rounded-full mb-2"/>
       <h1 class="text-2xl font-bold">{{ player.player_ID }}</h1>
     </section>
 
