@@ -7,27 +7,27 @@
         class="w-20 h-20 mr-2 p-2"
       />
       <div>
-        <time class="text-white text-sm mb-1">06/03/2024</time>
-        <h2 class="text-white font-bold uppercase">Game Name</h2>
+        <time class="text-white text-sm mb-1">creation_date</time>
+        <h2 class="text-white font-bold uppercase">size</h2>
       </div>
     </article>
     <nav
       class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
     >
       <span>RESULT</span>
-      <span>WON</span>
+      <span>winner</span>
     </nav>
     <nav
       class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
     >
       <span>OPPONENT</span>
-      <span>LILLI</span>
+      <span>player_ID</span>
     </nav>
     <nav
       class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
     >
-      <span>KILLS</span>
-      <span>5</span>
+      <span>COINS</span>
+      <span>coins_win</span>
     </nav>
     <button class="bg-purple-600 text-white font-bold py-2 px-4 rounded">
       Replay
@@ -35,3 +35,15 @@
   </section>
 </template>
 
+<script>
+export default{
+  props:{
+    game : Object
+  },
+  methods: {
+    findPlayer(game){
+      return game.players_games.find(p => p.player_ID === localStorage.getItem('id-player'));
+    }
+  }
+};
+</script>
