@@ -2,6 +2,9 @@
 import CreateAttackComponent from '../components/CreateAttackComponent.vue';
 import BuyAttackComponent from '../components/BuyAttackComponent.vue';
 import SellAttackComponent from '../components/SellAttackComponent.vue';
+import { ref } from 'vue';
+
+const activeTab = ref('buy');
 </script>
 
 <template>
@@ -11,11 +14,25 @@ import SellAttackComponent from '../components/SellAttackComponent.vue';
     </aside>
 
     <article class="flex flex-col w-2/3 justify-center">
-      <section>
+      <section class="flex flex-row justify-center">
+      <button
+          class="m-2 p-2 pr-12 pl-12 font-bold text-white bg-buttons rounded hover:bg-hover "
+          :class="{ 'border-2 border-white': activeTab === 'buy' }"
+          @click="activeTab = 'buy'">
+          Buy
+        </button>
+        <button
+          class="m-2 p-2 pr-12 pl-12 font-bold text-white bg-buttons rounded hover:bg-hover"
+          :class="{ 'border-2 border-white': activeTab === 'sell' }"
+          @click="activeTab = 'sell'">
+          Sell
+        </button>
+      </section>
+        <section v-show="activeTab === 'buy'">
         <BuyAttackComponent />
       </section>
 
-      <section class="mt-10">
+      <section v-show="activeTab === 'sell'">
         <SellAttackComponent />
       </section>
     </article>

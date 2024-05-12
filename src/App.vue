@@ -14,7 +14,6 @@ import { RouterView } from 'vue-router';
 import { isAuthenticated as checkAuth } from './utils/auth';
 
 const isAuthenticated = ref(false);
-//const isAuthenticated = ref(isAuthenticated());
 onMounted(() => {
   isAuthenticated.value = checkAuth();
 });

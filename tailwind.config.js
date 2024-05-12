@@ -9,7 +9,8 @@ export default {
       colors: {
         'buttons': '#763DCF',
         'placeholder': '#1A1C26',
-        'steel': '#34363E'
+        'steel': '#34363E',
+        'hover': '#8A65E2',
       },
     },
   },

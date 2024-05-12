@@ -53,7 +53,6 @@ export default {
         })
         .then(data => {
           this.attacks = data; 
-          console.log('Attack data:', this.attacks.power);
         })
         .catch(error => {
           console.error('Error fetching attack data:', error);
