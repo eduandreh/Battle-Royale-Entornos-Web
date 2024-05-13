@@ -1,25 +1,19 @@
 <template>
   <section class="flex flex-col min-h-screen">
     <h2 class="text-2xl font-bold mb-4">Sell Attack</h2>
-    <form class="flex flex-col">
-      <section class="grid grid-rows-3 grid-flow-col gap-5">
-        <section
-          class="bg-steel text-white p-4 rounded-lg shadow-lg flex flex-col items-center"
-          v-for="index in Count"
-          :key="index"
-        >
-          <img
-            class="w-24 h-24"
-            src="https://firebasestorage.googleapis.com/v0/b/battle-royale-8ef31.appspot.com/o/Mask%20group%20(1).png?alt=media&token=46348657-f7cc-4dd8-beed-d1d2426abc8a"
-            alt="Descripción de la imagen 1"
-          />
-          <h3 class="mt-2">Handfull of Buncoin</h3>
-          <button class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8">
-            Sell
-          </button>
-        </section>
+    <article class="grid grid-cols-3 gap-5">
+      <section
+        class="bg-steel text-white p-4 rounded-lg shadow-lg flex flex-col items-center"
+        v-for="attack in attacks.slice(0, 12)"
+        :key="attack.attack_ID"
+      >
+        <h3 class="mt-2">Name: {{ attack.attack_ID }}</h3>
+        <h4>Coordinates: {{ attack.positions }}</h4>
+        <button class="bg-buttons text-white font-semibold p-2 rounded-md w-1/2 m-5">
+          Sell
+        </button>
       </section>
-    </form>
+    </article>
   </section>
 </template>
 
@@ -27,8 +21,42 @@
 export default {
   data() {
     return {
-      Count: 9,
+      attacks: [
+        {
+    attack_ID: '',
+    positions: '',
+    power: 0,
+    on_sale: true
+  }
+      ]
     };
   },
-};
+  methods: {
+    fetchAttackData() {
+      const url = `https://balandrau.salle.url.edu/i3/players/attacks`;
+      
+      const headers = {
+        'Bearer': localStorage.getItem('authToken'), 
+        'Content-Type': 'application/json'
+      };
+
+      fetch(url, { method: 'GET', headers: headers })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          this.attacks = data; 
+        })
+        .catch(error => {
+          console.error('Error fetching attack data:', error);
+        });
+    }
+  },
+  mounted() {
+    this.fetchAttackData();
+  }
+}
 </script>

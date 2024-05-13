@@ -4,13 +4,12 @@
     <article class="grid grid-cols-3 gap-5">
       <section
         class="bg-steel text-white p-4 rounded-lg shadow-lg flex flex-col items-center"
-        v-for="attack in attacks.slice(0, 9)"
+        v-for="attack in attacks.slice(0, 12)"
         :key="attack.attack_ID"
       >
-        <h3 class="mt-2">Nombre: {{ attack.attack_ID }}</h3>
-        <h4>Posiciones: {{ attack.positions }}</h4>
-        <h4 class="text-xl font-bold">$ {{ attack.price }}</h4>
-        <button class="bg-buttons text-white p-2 rounded-md w-1/2 m-5">
+        <h3 class="mt-2">Name: {{ attack.attack_ID }}</h3>
+        <h4>Coordinates: {{ attack.positions }}</h4>
+        <button class="bg-buttons text-white font-semibold p-2 rounded-md w-1/2 m-5">
           Buy: {{ attack.price }} coins
         </button>
       </section>
