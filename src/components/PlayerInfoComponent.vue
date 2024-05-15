@@ -24,6 +24,21 @@
         <span class="text-lg font-semibold p-9">{{ player.level }}</span>
       </div>
     </section>
+
+    <!-- <ul class="flex justify-between w-full p-4 bg-steel rounded-3xl">
+      <li class="flex flex-col items-center">
+        <span class="text-sm font-semibold">Kills</span>
+        <span>{{ player.level }}</span>
+      </li>
+      <li class="flex flex-col items-center">
+        <span class="text-sm font-semibold">Games</span>
+        <span>{{ player.xp }}</span>
+      </li>
+      <li class="flex flex-col items-center">
+        <span class="text-sm font-semibold">Time</span>
+        <span>{{ player.playTime }}</span>
+      </li>
+    </ul> -->
   </article>
 </template>
 
