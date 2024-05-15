@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col min-h-screen">
-    <h2 class="text-2xl font-bold mb-4">Buy Attack</h2>
+    <h2 class="text-2xl font-bold mb-4">Buy Attacks</h2>
     <article class="grid grid-cols-3 gap-5">
       <section
         class="bg-steel text-white p-4 rounded-lg shadow-lg flex flex-col items-center"

@@ -1,14 +1,15 @@
 <template>
   <section class="flex flex-col min-h-screen">
-    <h2 class="text-2xl font-bold mb-4">Sell Attack</h2>
+    <h2 class="text-2xl font-bold mb-4">Attacks avaliable to sell</h2>
     <article class="grid grid-cols-3 gap-5">
       <section
         class="bg-steel text-white p-4 rounded-lg shadow-lg flex flex-col items-center"
-        v-for="attack in attacks.slice(0, 12)"
-        :key="attack.attack_ID"
+        v-for="attack in attacksForSale"
+        :key="attack.attack_ID" 
       >
         <h3 class="mt-2">Name: {{ attack.attack_ID }}</h3>
         <h4>Coordinates: {{ attack.positions }}</h4>
+        <input type="number" class="bg-placeholder rounded-xl p-2 mb-4 w-1/2 mt-2 text-center" placeholder="Price" />
         <button class="bg-buttons text-white font-semibold p-2 rounded-md w-1/2 m-5">
           Sell
         </button>
@@ -21,15 +22,13 @@
 export default {
   data() {
     return {
-      attacks: [
-        {
-    attack_ID: '',
-    positions: '',
-    power: 0,
-    on_sale: true
-  }
-      ]
+      attacks: []
     };
+  },
+  computed: {
+    attacksForSale() {
+      return this.attacks.filter(attack => !attack.on_sale);
+    }
   },
   methods: {
     fetchAttackData() {
@@ -52,6 +51,33 @@ export default {
         })
         .catch(error => {
           console.error('Error fetching attack data:', error);
+        });
+    },
+
+    SellAttack(attack_ID, price) {
+      const url = `https://balandrau.salle.url.edu/i3/players/attacks/${attack_ID}/sell`;
+      
+      const headers = {
+        'Bearer': localStorage.getItem('authToken'), 
+        'Content-Type': 'application/json'
+      };
+
+      const body = JSON.stringify({ price });
+
+      fetch(url, { method: 'POST', headers: headers, body: body })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          alert('Attack sold successfully!');
+          console.log('Attack sold:', data);
+        })
+        .catch(error => {
+          console.error('Error selling attack:', error);
+          alert('Attack sold successfully!', error);
         });
     }
   },

@@ -16,6 +16,9 @@ import PlayerInfoComponent from '../components/PlayerInfoComponent.vue';
 
 <script>
 export default {
+  components: {
+    PlayerInfoComponent,
+  },
   data() {
     return {
       playerInfoCount: 9,
