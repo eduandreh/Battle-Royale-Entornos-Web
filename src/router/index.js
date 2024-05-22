@@ -21,10 +21,7 @@ const router = createRouter({
     {
       path: '/login',
       name: 'Login',
-      component: LoginComponent,
-      redirect: () => {
-        return isAuthenticated() ? '/player-management' : '/login';
-      }
+      component: LoginComponent
     },
     {
       path: '/player-management',
@@ -88,7 +85,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !isAuthenticated()) {
-    next({ name: 'PlayerManagement' });
+    next({ name: 'login' });
   } else {
     next();
   }
