@@ -6,7 +6,7 @@ import PlayerGameHistoryPage from '../views/PlayerGameHistoryPage.vue';
 import GameAdministrationPage from '../views/GameAdministrationPage.vue';
 import StorePage from '../views/StorePage.vue';
 import GamePage from '../views/GamePage.vue';
-import LoginComponent from '../components/LoginComponent.vue';
+import Login from '../components/LoginComponent.vue';
 import { isAuthenticated } from '../utils/auth';
 
 const router = createRouter({
@@ -21,7 +21,7 @@ const router = createRouter({
     {
       path: '/login',
       name: 'Login',
-      component: LoginComponent
+      component: Login
     },
     {
       path: '/player-management',
@@ -82,11 +82,13 @@ const router = createRouter({
   ],
 });
 
-
+// Route guard to check for authentication on routes that require it
 router.beforeEach((to, from, next) => {
   if (to.meta.requiresAuth && !isAuthenticated()) {
-    next({ name: 'login' });
+    // Redirects to login page if the route requires authentication and user is not authenticated
+    next({ name: 'Login' });
   } else {
+    // Proceed to route
     next();
   }
 });

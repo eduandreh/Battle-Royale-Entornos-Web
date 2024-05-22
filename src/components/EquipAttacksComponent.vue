@@ -1,14 +1,18 @@
-
 <template>
   <section class="text-2xl text-white font-semibold mx-10">
     <h2>Equipped Attacks</h2>
   </section>
-  <section class="flex flex-row gap-12 justify-center m-5">
-    <attack-component v-for="attack in attackEquipped" :key="attack.attack_ID" :attack="attack" />
+  <section class="flex flex-row justify-center">
+    <div
+      class="scale-75"  
+      v-for="attack in attackEquipped"
+      :key="attack.attack_ID"
+    >
+      <attack-component :attack="attack" />
+    </div>
   </section>
-
- 
 </template>
+
 
 <script>
 import  AttackComponent from '../components/AttackComponent.vue';
