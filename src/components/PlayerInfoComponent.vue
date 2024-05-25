@@ -1,3 +1,6 @@
+<script setup>
+import DeletionComponent from '../components/DeletionComponent.vue';
+</script>
 <template>
   <article class="bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
     <section class="flex items-center justify-center space-x-10 w-full">
@@ -24,6 +27,7 @@
         <span class="text-lg font-semibold p-9">{{ player.level }}</span>
       </div>
     </section>
+      <DeletionComponent/>
   </article>
 </template>
 
