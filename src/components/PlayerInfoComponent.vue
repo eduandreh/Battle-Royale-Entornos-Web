@@ -7,7 +7,6 @@ import DeletionComponent from '../components/DeletionComponent.vue';
       <img :src="player.img" alt="User" class="w-24 h-24 rounded-full mb-2"/>
       <h1 class="text-2xl font-bold">{{ player.player_ID }}</h1>
     </section>
-
     <section class="flex items-center justify-between space-x-10">
       <div class="flex flex-col items-center">
         <h2 class="text-lg font-semibold p-2">COINS</h2>
@@ -18,7 +17,6 @@ import DeletionComponent from '../components/DeletionComponent.vue';
         />
         <span class="text-lg font-semibold p-2">{{ player.coins }}</span>
       </div>
-
       <div class="flex flex-col items-center">
         <h2 class="text-lg font-semibold p-9">LEVEL</h2>
         <div class="w-full bg-gray-700 rounded-full h-5 overflow-hidden">
@@ -30,6 +28,7 @@ import DeletionComponent from '../components/DeletionComponent.vue';
       <DeletionComponent/>
   </article>
 </template>
+
 
 <script>
 export default {

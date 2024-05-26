@@ -11,29 +11,24 @@
         <h2 class="text-white font-bold uppercase">size</h2>
       </div>
     </article>
-    <nav
-      class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
-    >
+    <div class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium">
       <span>RESULT</span>
       <span>winner</span>
-    </nav>
-    <nav
-      class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
-    >
+    </div>
+    <div class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium">
       <span>OPPONENT</span>
       <span>player_ID</span>
-    </nav>
-    <nav
-      class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
-    >
+    </div>
+    <div class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium">
       <span>COINS</span>
       <span>coins_win</span>
-    </nav>
+    </div>
     <button class="bg-purple-600 text-white font-bold py-2 px-4 rounded">
       Replay
     </button>
   </section>
 </template>
+
 
 <script>
 export default{

@@ -1,6 +1,6 @@
 <template>
   <section class="text-2xl text-white font-semibold mx-10">
-    <h2>Equipped Attacks</h2>
+    <h1>Equipped Attacks</h1>
   </section>
   <section class="flex flex-row justify-center">
     <div

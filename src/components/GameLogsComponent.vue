@@ -3,16 +3,17 @@ import GameReplayComponent from './GameReplayComponent.vue';
 </script>
 
 <template>
-  <form class="flex flex-col min-h-screen">
+  <section class="flex flex-col min-h-screen">
     <div class="flex flex-col justify-start">
-      <section class="grid gap-x-8 gap-y-4 grid-cols-1">
-        <section v-for="game in games" :key="game.game_ID">
+      <div class="grid gap-x-8 gap-y-4 grid-cols-1">
+        <article v-for="game in games" :key="game.game_ID">
           <GameReplayComponent :game="game"/>
-        </section>
-      </section>
+        </article>
+      </div>
     </div>
-  </form>
+  </section>
 </template>
+
 
 <script>
 export default {

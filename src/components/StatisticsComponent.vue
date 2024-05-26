@@ -1,34 +1,30 @@
 <template>
   <article class="bg-steel p-8 rounded-lg shadow-md text-white">
     <h2 class="text-2xl font-bold mb-8">Win Rate</h2>
-    <div class="flex justify-around text-sm font-medium mb-4">
+    <section class="flex justify-around text-sm font-medium mb-4">
       <div
         class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg"
       >
-      <!-- /players/statistics -->
         <span>GAMES</span>
         <span>{{ statistics.games_played }}</span>
       </div>
       <div
         class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg"
       >
-      <!-- /players/statistics -->
         <span>GAMES WON</span>
         <span>{{ statistics.games_won }}</span>
       </div>
       <div
         class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg"
       >
-      <!-- /players/{id} -->
         <span>COINS</span>
         <span>{{ player.coins }}</span>
       </div>
-    </div>
+    </section>
     <section
       class="flex justify-center items-center p-8 bg-gray-900 rounded-lg border-2 border-purple-600"
     >
       <div class="w-full bg-gray-700 rounded-full h-8">
-        <!-- /players/{id} -->
         <div
           class="bg-purple-600 h-8 rounded-full flex justify-center items-center"
           :style="{ width: player.xp + '%' }"
