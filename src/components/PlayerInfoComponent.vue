@@ -2,9 +2,11 @@
 import DeletionComponent from '../components/DeletionComponent.vue';
 </script>
 <template>
-  <article class="bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+  <article
+    class="bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center"
+  >
     <section class="flex items-center justify-center space-x-10 w-full">
-      <img :src="player.img" alt="User" class="w-24 h-24 rounded-full mb-2"/>
+      <img :src="player.img" alt="User" class="w-24 h-24 rounded-full mb-2" />
       <h1 class="text-2xl font-bold">{{ player.player_ID }}</h1>
     </section>
     <section class="flex items-center justify-between space-x-10">
@@ -20,15 +22,17 @@ import DeletionComponent from '../components/DeletionComponent.vue';
       <div class="flex flex-col items-center">
         <h2 class="text-lg font-semibold p-9">LEVEL</h2>
         <div class="w-full bg-gray-700 rounded-full h-5 overflow-hidden">
-          <div class="bg-purple-600 h-5" :style="{ width: player.xp + '%' }"></div>
+          <div
+            class="bg-purple-600 h-5"
+            :style="{ width: player.xp + '%' }"
+          ></div>
         </div>
         <span class="text-lg font-semibold p-9">{{ player.level }}</span>
       </div>
     </section>
-      <DeletionComponent/>
+    <DeletionComponent />
   </article>
 </template>
-
 
 <script>
 export default {
@@ -40,36 +44,36 @@ export default {
         coins: 0,
         level: 0,
         xp: 0,
-      }
+      },
     };
   },
   methods: {
     fetchPlayerData() {
       const playerId = localStorage.getItem('id-player');
       const url = `https://balandrau.salle.url.edu/i3/players/${playerId}`;
-      
+
       const headers = {
-        'Bearer': localStorage.getItem('authToken'), 
-        'Content-Type': 'application/json'
+        Bearer: localStorage.getItem('authToken'),
+        'Content-Type': 'application/json',
       };
 
       fetch(url, { method: 'GET', headers: headers })
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
           return response.json();
         })
-        .then(data => {
-          this.player = data;  
+        .then((data) => {
+          this.player = data;
         })
-        .catch(error => {
+        .catch((error) => {
           console.error('Error fetching player data:', error);
         });
-    }
+    },
   },
   mounted() {
     this.fetchPlayerData();
-  }
-}
+  },
+};
 </script>

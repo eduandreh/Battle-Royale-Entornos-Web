@@ -1,6 +1,11 @@
 <template>
   <div>
-    <button class="bg-buttons text-white font-bold py-2 px-4 rounded m-2" @click="fetchDeletePlayer">Delete Player</button>
+    <button
+      class="bg-buttons text-white font-bold py-2 px-4 rounded m-2"
+      @click="fetchDeletePlayer"
+    >
+      Delete Player
+    </button>
   </div>
 </template>
 
@@ -11,31 +16,30 @@ export default {
       const url = `https://balandrau.salle.url.edu/i3/players/`;
 
       const headers = new Headers({
-        'Bearer' : localStorage.getItem('authToken'),
-        'Content-Type': 'application/json'
+        Bearer: localStorage.getItem('authToken'),
+        'Content-Type': 'application/json',
       });
 
       fetch(url, { method: 'DELETE', headers: headers })
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
-          return response.json(); 
+          return response.json();
         })
-        .then(data => {
-         if (data.message === 'Player deleted'){
-           localStorage.removeItem('authToken');
-           this.$router.push('/login');
-         }
+        .then((data) => {
+          if (data.message === 'Player deleted') {
+            localStorage.removeItem('authToken');
+            this.$router.push('/login');
+          }
         })
-        .catch(error => {
+        .catch((error) => {
           console.error('Error deleting player:', error);
         });
-    }
+    },
   },
   mounted() {
     this.fetchDeletePlayer();
-  }
-}
-
+  },
+};
 </script>

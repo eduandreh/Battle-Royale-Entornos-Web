@@ -3,11 +3,9 @@ import { ref } from 'vue';
 import PlayerListComponent from '../components/PlayerListComponent.vue';
 import PlayerInfoComponent from '../components/PlayerInfoComponent.vue';
 
-const searchText = ref(''); 
+const searchText = ref('');
 
-const handleSearch = () => {
-
-}
+const handleSearch = () => {};
 </script>
 
 <template>
@@ -15,7 +13,10 @@ const handleSearch = () => {
     <div class="justify-start w-1/4">
       <PlayerInfoComponent />
     </div>
-    <form @submit.prevent="handleSearch" class="flex-grow flex flex-col justify-start">
+    <form
+      @submit.prevent="handleSearch"
+      class="flex-grow flex flex-col justify-start"
+    >
       <nav class="flex flex-row w-full gap-4">
         <input
           type="text"
@@ -26,12 +27,13 @@ const handleSearch = () => {
         />
         <button
           class="bg-buttons text-white rounded-md w-1/6"
-          style="height: 3rem">
+          style="height: 3rem"
+        >
           Search
         </button>
       </nav>
       <div class="justify-start w-full">
-        <PlayerListComponent :filterText="searchText"/>
+        <PlayerListComponent :filterText="searchText" />
       </div>
     </form>
   </section>

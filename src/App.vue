@@ -17,5 +17,4 @@ const isAuthenticated = ref(false);
 onMounted(() => {
   isAuthenticated.value = checkAuth();
 });
-
 </script>

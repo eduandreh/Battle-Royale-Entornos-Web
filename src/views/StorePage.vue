@@ -15,20 +15,22 @@ const activeTab = ref('buy');
 
     <article class="flex flex-col w-2/3 justify-center">
       <section class="flex flex-row justify-center">
-      <button
-          class="m-2 p-2 pr-12 pl-12 font-bold text-white bg-buttons rounded hover:bg-hover "
+        <button
+          class="m-2 p-2 pr-12 pl-12 font-bold text-white bg-buttons rounded hover:bg-hover"
           :class="{ 'border-2 border-white': activeTab === 'buy' }"
-          @click="activeTab = 'buy'">
+          @click="activeTab = 'buy'"
+        >
           Buy
         </button>
         <button
           class="m-2 p-2 pr-12 pl-12 font-bold text-white bg-buttons rounded hover:bg-hover"
           :class="{ 'border-2 border-white': activeTab === 'sell' }"
-          @click="activeTab = 'sell'">
+          @click="activeTab = 'sell'"
+        >
           Sell
         </button>
       </section>
-        <section v-show="activeTab === 'buy'">
+      <section v-show="activeTab === 'buy'">
         <BuyAttackComponent />
       </section>
 

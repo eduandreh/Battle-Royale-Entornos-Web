@@ -16,68 +16,68 @@ const router = createRouter({
       path: '/',
       redirect: () => {
         return isAuthenticated() ? '/player-management' : '/login';
-      }
+      },
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
     },
     {
       path: '/player-management',
       name: 'PlayerManagement',
       component: PlayerManagementPage,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
     },
     {
       path: '/attack-management',
       name: 'AttackManagement',
       component: AttackManagementPage,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
     },
     {
       path: '/rankings',
       name: 'Rankings',
       component: RankingsPage,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
     },
     {
       path: '/player-game-history',
       name: 'PlayerGameHistory',
       component: PlayerGameHistoryPage,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
     },
     {
       path: '/game-administration',
       name: 'GameAdministration',
       component: GameAdministrationPage,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
     },
     {
       path: '/store',
       name: 'Store',
       component: StorePage,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
     },
     {
       path: '/game',
       name: 'Game',
       component: GamePage,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
     },
   ],
 });

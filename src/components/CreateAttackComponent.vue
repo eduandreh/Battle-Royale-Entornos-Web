@@ -1,7 +1,10 @@
 <template>
   <section class="flex flex-col">
     <h2 class="text-2xl font-bold mb-4">Create Attack</h2>
-    <form @submit.prevent="CreateAttackComponent" class="flex flex-col justify-start">
+    <form
+      @submit.prevent="CreateAttackComponent"
+      class="flex flex-col justify-start"
+    >
       <section class="flex flex-col">
         <label for="gameName" class="text-sm">Name</label>
         <input
@@ -24,8 +27,9 @@
       </section>
 
       <button
-      type="submit"
-       class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8">
+        type="submit"
+        class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8"
+      >
         Create Attack
       </button>
     </form>
@@ -36,7 +40,7 @@
 import { ref } from 'vue';
 
 export default {
-  name: "CreateAttackComponent",
+  name: 'CreateAttackComponent',
   setup() {
     const attack = ref({
       attack_ID: '',
@@ -45,34 +49,31 @@ export default {
     });
 
     const CreateAttackComponent = () => {
-    
       const apiURL = 'https://balandrau.salle.url.edu/i3/shop/attacks';
       fetch(apiURL, {
         method: 'POST',
 
-        headers: { 'Bearer': localStorage.getItem('authToken'),
-                   'Content-Type': 'application/json' },
+        headers: {
+          Bearer: localStorage.getItem('authToken'),
+          'Content-Type': 'application/json',
+        },
 
-        body: JSON.stringify(attack.value)
+        body: JSON.stringify(attack.value),
       })
-      .then(response => {
-    if (response.ok) {
-      
-      response.status === 201;
-        
-      
-    } else {
-      throw new Error(`Creation failed: ${response.status}`);
-    }
-  })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('Creation failed: ' + error.message);
-      });
+        .then((response) => {
+          if (response.ok) {
+            response.status === 201;
+          } else {
+            throw new Error(`Creation failed: ${response.status}`);
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('Creation failed: ' + error.message);
+        });
     };
 
     return { attack, CreateAttackComponent };
   },
 };
-
 </script>

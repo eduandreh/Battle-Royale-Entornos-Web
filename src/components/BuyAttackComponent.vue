@@ -23,42 +23,44 @@ export default {
   data() {
     return {
       attacks: [
-        {attack_ID: '',
-        positions: '',
-        img: '',
-        power: 0,
-        price: 0,
-        level_needed: 0,
-        on_sale: true}
-      ]
+        {
+          attack_ID: '',
+          positions: '',
+          img: '',
+          power: 0,
+          price: 0,
+          level_needed: 0,
+          on_sale: true,
+        },
+      ],
     };
   },
   methods: {
     fetchAttackData() {
       const url = `https://balandrau.salle.url.edu/i3/shop/attacks`;
-      
+
       const headers = {
-        'Bearer': localStorage.getItem('authToken'), 
-        'Content-Type': 'application/json'
+        Bearer: localStorage.getItem('authToken'),
+        'Content-Type': 'application/json',
       };
 
       fetch(url, { method: 'GET', headers: headers })
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
           return response.json();
         })
-        .then(data => {
-          this.attacks = data; 
+        .then((data) => {
+          this.attacks = data;
         })
-        .catch(error => {
+        .catch((error) => {
           console.error('Error fetching attack data:', error);
         });
-    }
+    },
   },
   mounted() {
     this.fetchAttackData();
-  }
-}
+  },
+};
 </script>

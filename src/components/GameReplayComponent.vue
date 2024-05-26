@@ -11,15 +11,21 @@
         <h2 class="text-white font-bold uppercase">size</h2>
       </div>
     </article>
-    <div class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium">
+    <div
+      class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
+    >
       <span>RESULT</span>
       <span>winner</span>
     </div>
-    <div class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium">
+    <div
+      class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
+    >
       <span>OPPONENT</span>
       <span>player_ID</span>
     </div>
-    <div class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium">
+    <div
+      class="flex flex-row items-center space-x-2 p-4 bg-gray-900 rounded-lg font-medium"
+    >
       <span>COINS</span>
       <span>coins_win</span>
     </div>
@@ -29,16 +35,17 @@
   </section>
 </template>
 
-
 <script>
-export default{
-  props:{
-    game : Object
+export default {
+  props: {
+    game: Object,
   },
   methods: {
-    findPlayer(game){
-      return game.players_games.find(p => p.player_ID === localStorage.getItem('id-player'));
-    }
-  }
+    findPlayer(game) {
+      return game.players_games.find(
+        (p) => p.player_ID === localStorage.getItem('id-player'),
+      );
+    },
+  },
 };
 </script>

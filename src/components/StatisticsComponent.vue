@@ -36,7 +36,6 @@
   </article>
 </template>
 
-
 <script>
 export default {
   data() {
@@ -50,31 +49,31 @@ export default {
       },
       statistics: {
         games_played: 0,
-        games_won: 0
-      }
+        games_won: 0,
+      },
     };
   },
   methods: {
     fetchPlayerData() {
       const playerId = localStorage.getItem('id-player');
       const url = `https://balandrau.salle.url.edu/i3/players/${playerId}`;
-      
+
       const headers = {
-        'Bearer': localStorage.getItem('authToken'), 
-        'Content-Type': 'application/json'
+        Bearer: localStorage.getItem('authToken'),
+        'Content-Type': 'application/json',
       };
 
       fetch(url, { method: 'GET', headers: headers })
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
           return response.json();
         })
-        .then(data => {
+        .then((data) => {
           this.player = data;
         })
-        .catch(error => {
+        .catch((error) => {
           console.error('Error fetching player data:', error);
         });
     },
@@ -83,28 +82,28 @@ export default {
       const url = `https://balandrau.salle.url.edu/i3/players/${playerId}/statistics`;
 
       const headers = {
-        'Bearer': localStorage.getItem('authToken'), 
-        'Content-Type': 'application/json'
+        Bearer: localStorage.getItem('authToken'),
+        'Content-Type': 'application/json',
       };
 
       fetch(url, { method: 'GET', headers: headers })
-        .then(response => {
+        .then((response) => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
           return response.json();
         })
-        .then(data => {
+        .then((data) => {
           this.statistics = data;
         })
-        .catch(error => {
+        .catch((error) => {
           console.error('Error fetching player statistics:', error);
         });
-    }
+    },
   },
   mounted() {
     this.fetchPlayerData();
     this.fetchPlayerStatistics();
-  }
-}
+  },
+};
 </script>
