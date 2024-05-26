@@ -1,24 +1,22 @@
 <template>
   <section class="flex flex-col min-h-screen">
-    <h2 class="text-2xl font-bold mb-4">Buy Attack</h2>
-    <article class="grid grid-cols-3 gap-5">
-      <section
+    <h1 class="text-2xl font-bold mb-4">Buy Attack</h1>
+    <div class="grid grid-cols-3 gap-5">
+      <article
         class="bg-steel text-white p-4 rounded-lg shadow-lg flex flex-col items-center"
         v-for="attack in attacks.slice(0, 9)"
         :key="attack.attack_ID"
       >
-        <h3 class="mt-2">Nombre: {{ attack.attack_ID }}</h3>
-        <h4>Posiciones: {{ attack.positions }}</h4>
-        <h4 class="text-xl font-bold">$ {{ attack.price }}</h4>
+        <h2 class="mt-2">Nombre: {{ attack.attack_ID }}</h2>
+        <p>Posiciones: {{ attack.positions }}</p>
+        <p class="text-xl font-bold">$ {{ attack.price }}</p>
         <button class="bg-buttons text-white p-2 rounded-md w-1/2 m-5">
           Buy: {{ attack.price }} coins
         </button>
-      </section>
-    </article>
+      </article>
+    </div>
   </section>
 </template>
-
-
 
 <script>
 export default {

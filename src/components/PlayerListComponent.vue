@@ -1,16 +1,16 @@
 <template>
-  <div class="flex flex-col min-h-screen">
+  <article class="flex flex-col min-h-screen">
     <section class="grid gap-x-8 gap-y-4 grid-cols-1 p-5">
-      <section v-for="player in filteredPlayers" :key="player.player_ID" class="w-full bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+      <article v-for="player in filteredPlayers" :key="player.player_ID" class="w-full bg-gray-900 text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
         <section class="flex items-center justify-between space-x-8 w-full p-5">
-          <h1 class="text-2xl font-bold">Player: {{ player.player_ID }}</h1>
-          <h1 class="text-2xl font-bold">Level: {{ player.level }}</h1>
-          <h1 class="text-2xl font-bold">Coins: {{ player.coins }}</h1>
-          <h1 class="text-2xl font-bold">Xp: {{ player.xp }}</h1>
+          <h2 class="text-2xl font-bold">Player: {{ player.player_ID }}</h2>
+          <h2 class="text-2xl font-bold">Level: {{ player.level }}</h2>
+          <h2 class="text-2xl font-bold">Coins: {{ player.coins }}</h2>
+          <h2 class="text-2xl font-bold">Xp: {{ player.xp }}</h2>
         </section>
-      </section>
+      </article>
     </section>
-  </div>
+  </article>
 </template>
 
 <script>

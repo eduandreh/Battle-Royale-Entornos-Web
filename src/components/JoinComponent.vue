@@ -3,23 +3,24 @@
     <form class="flex flex-col justify-start">
       <section class="grid grid-rows-3 grid-flow-col gap-4 m-5">
         <article v-for="index in AvailableGamesCount" :key="index">
-          <img
-            class="w-48 h-28"
-            src="https://firebasestorage.googleapis.com/v0/b/battle-royale-8ef31.appspot.com/o/Rectangle%206496.png?alt=media&token=80a5f0cc-1a84-42a6-83c6-d3188800bdba"
-            alt="Descripción de la imagen 1"
-          />
-          <h3>Game 10x6</h3>
+          <div class="bg-steel text-white p-4 rounded-lg shadow-lg flex flex-col items-center">
+            <h3 class="mt-2">Game</h3>
+            <h3 class="mt-2">Date:</h3>
+            <h3 class="mt-2">Player:</h3>
+          </div>
+          <h1>Game 10x6</h1>
         </article>
       </section>
 
-      <router-link to="/game"
-        ><button type="submit" class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8">
+      <router-link to="/game">
+        <button type="submit" class="bg-buttons text-white p-2 rounded-md w-1/2 mt-8">
           Join
         </button>
       </router-link>
     </form>
   </section>
 </template>
+
 
 <script>
 export default {
