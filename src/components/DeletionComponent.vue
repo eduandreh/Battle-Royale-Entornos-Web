@@ -23,8 +23,10 @@ export default {
           return response.json(); 
         })
         .then(data => {
-          console.log('Player deleted:', data);
-          this.$router.push('/login'); 
+         if (data.message === 'Player deleted'){
+           localStorage.removeItem('authToken');
+           this.$router.push('/login');
+         }
         })
         .catch(error => {
           console.error('Error deleting player:', error);

@@ -46,9 +46,7 @@ export default {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(user.value);
         if (data.token) {
-          console.log('Login successful:', data.token);
           saveToken(data.token, data.player_ID); 
           isAuthenticated.value = true; 
           router.push('/');

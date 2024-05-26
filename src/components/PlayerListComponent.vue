@@ -55,7 +55,6 @@ export default defineComponent({
         })
         .then(data => {
           this.players = data;
-          console.log('Updated players data:', this.players);
         })
         .catch(error => {
           console.error('Error fetching player data:', error);

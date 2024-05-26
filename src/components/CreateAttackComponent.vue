@@ -56,21 +56,17 @@ export default {
         body: JSON.stringify(attack.value)
       })
       .then(response => {
-    if (response.ok && response.status === 201) {
+    if (response.ok) {
       
-        console.log('Creation successful, no content to return.');
+      response.status === 201;
         
       
     } else {
       throw new Error(`Creation failed: ${response.status}`);
     }
   })
-      .then(data => {
-        console.log('Creation successful:', data);
-      })
       .catch(error => {
         console.error('Error:', error);
-        console.log(JSON.stringify(attack.value));
         alert('Creation failed: ' + error.message);
       });
     };

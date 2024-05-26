@@ -72,10 +72,10 @@ export default {
           }
           return response.json();
         })
-        .then(data => {
-          alert('Attack sold successfully!');
-          console.log('Attack sold:', data);
-        })
+        .then(
+          alert('Attack sold successfully!')
+        
+        )
         .catch(error => {
           console.error('Error selling attack:', error);
           alert('Attack sold successfully!', error);

@@ -92,7 +92,7 @@ export default {
       .then(response => {
     if (response.ok && response.status === 201) {
       
-        console.log('Register successful, no content to return.');
+        
         alert('Register successful! Please login to continue');
         
       
@@ -100,13 +100,12 @@ export default {
       throw new Error(`Register failed: ${response.status}`);
     }
   })
-      .then(data => {
-        console.log('Register successful:', data);
-        alert('Register successful! Please login to continue');
-      })
+      .then(
+        
+        alert('Register successful! Please login to continue')
+      )
       .catch(error => {
         console.error('Error:', error);
-        console.log(JSON.stringify(user.value));
         alert('Registration failed: ' + error.message);
       });
     };
