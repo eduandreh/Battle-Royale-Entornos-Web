@@ -6,7 +6,7 @@
           <label
             for="username"
             class="block text-sm font-medium leading-6 text-white"
-            >Email</label
+            >Username</label
           >
           <div class="mt-2">
             <input

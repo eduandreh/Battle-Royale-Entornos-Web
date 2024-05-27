@@ -22,6 +22,13 @@ const router = createRouter({
       path: '/login',
       name: 'Login',
       component: Login,
+      beforeEnter: (to, from, next) => {
+        if (isAuthenticated()) {
+          next({ name: 'PlayerManagement' });
+        } else {
+          next();
+        }
+      }
     },
     {
       path: '/player-management',
@@ -82,13 +89,10 @@ const router = createRouter({
   ],
 });
 
-// Route guard to check for authentication on routes that require it
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && !isAuthenticated()) {
-    // Redirects to login page if the route requires authentication and user is not authenticated
+  if (!isAuthenticated()) {
     next({ name: 'Login' });
   } else {
-    // Proceed to route
     next();
   }
 });
