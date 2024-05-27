@@ -38,8 +38,5 @@ export default {
         });
     },
   },
-  mounted() {
-    this.fetchDeletePlayer();
-  },
 };
 </script>
