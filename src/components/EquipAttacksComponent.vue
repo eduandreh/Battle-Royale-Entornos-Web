@@ -5,7 +5,11 @@
   <section class="flex flex-row justify-center">
     <section v-if="attacks.length === 0">
       <section class="grid grid-cols-3 gap-4">
-        <article v-for="n in 3" :key="n" class="bg-steel p-20 rounded-lg text-center m-5 "></article>
+        <article
+          v-for="n in 3"
+          :key="n"
+          class="bg-steel p-20 rounded-lg text-center m-5"
+        ></article>
       </section>
     </section>
     <section v-else class="grid grid-cols-3 gap-4">

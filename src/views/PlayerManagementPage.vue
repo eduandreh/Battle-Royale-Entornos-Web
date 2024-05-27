@@ -1,8 +1,6 @@
 <script setup>
-
 import PlayerInfoComponent from '../components/PlayerInfoComponent.vue';
 import EquippedAttacksComponent from '../components/EquippedAttacksComponent.vue';
-
 </script>
 <template>
   <section class="m-10 p-4 flex flex-col lg:flex-row lg:gap-x-10">
@@ -27,7 +25,6 @@ import EquippedAttacksComponent from '../components/EquippedAttacksComponent.vue
   </section>
 </template>
 
-
 <script>
 import { ref } from 'vue';
 import JoinComponent from '../components/JoinComponent.vue';
@@ -39,22 +36,22 @@ const filteredGames = ref([]);
 const fetchGames = () => {
   const url = `https://balandrau.salle.url.edu/i3/arenas`;
   const headers = {
-    'Bearer': localStorage.getItem('authToken'),
-    'Content-Type': 'application/json'
+    Bearer: localStorage.getItem('authToken'),
+    'Content-Type': 'application/json',
   };
 
   fetch(url, { method: 'GET', headers: headers })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       return response.json();
     })
-    .then(data => {
+    .then((data) => {
       games.value = data;
       filteredGames.value = data;
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Error fetching game data:', error);
     });
 };
@@ -63,16 +60,16 @@ const filterGames = ({ filter, searchText }) => {
   let filtered = games.value;
 
   if (filter === 'started') {
-    filtered = filtered.filter(game => game.start && !game.finished);
+    filtered = filtered.filter((game) => game.start && !game.finished);
   } else if (filter === 'not_started') {
-    filtered = filtered.filter(game => !game.start);
+    filtered = filtered.filter((game) => !game.start);
   } else if (filter === 'finished') {
-    filtered = filtered.filter(game => game.finished);
+    filtered = filtered.filter((game) => game.finished);
   }
 
   if (searchText) {
-    filtered = filtered.filter(game =>
-      game.game_ID.toLowerCase().includes(searchText.toLowerCase())
+    filtered = filtered.filter((game) =>
+      game.game_ID.toLowerCase().includes(searchText.toLowerCase()),
     );
   }
 

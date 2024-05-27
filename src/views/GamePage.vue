@@ -3,7 +3,6 @@ import ArenaGridComponent from '../components/ArenaGridComponent.vue';
 import EquippedAttacksComponent from '../components/EquippedAttacksComponent.vue';
 import MovementComponent from '../components/MovementComponent.vue';
 import GameEndComponent from '../components/GameEndComponent.vue';
-
 </script>
 
 <template>
@@ -19,7 +18,7 @@ import GameEndComponent from '../components/GameEndComponent.vue';
     <section class="absolute bottom-12 right-40 m-5 p-5">
       <MovementComponent />
     </section>
-    <section class="absolute bottom-0 right-40 ">
+    <section class="absolute bottom-0 right-40">
       <GameEndComponent />
     </section>
   </section>

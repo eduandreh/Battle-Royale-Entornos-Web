@@ -28,7 +28,7 @@ const router = createRouter({
         } else {
           next();
         }
-      }
+      },
     },
     {
       path: '/player-management',

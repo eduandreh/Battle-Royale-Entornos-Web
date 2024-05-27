@@ -1,8 +1,8 @@
 <template>
-  <template v-if="isAuthenticated">
+  <section v-if="isAuthenticated">
     <header><HeaderComponent /></header>
     <RouterView />
-  </template>
+  </section>
   <CreationPlayerPage v-else />
 </template>
 

@@ -33,7 +33,6 @@ export default {
   data() {
     return {
       attacks: [],
-     
     };
   },
   computed: {
@@ -41,7 +40,9 @@ export default {
       return this.attacks.slice(0, 24);
     },
     attackEquipped() {
-      return this.attacks.filter((attack) => !attack.equipped && !attack.on_sale);
+      return this.attacks.filter(
+        (attack) => !attack.equipped && !attack.on_sale,
+      );
     },
   },
   methods: {
