@@ -33,15 +33,15 @@ export default {
   data() {
     return {
       attacks: [],
-      Count: 24,
+     
     };
   },
   computed: {
     filledAttacks() {
-      return this.attacks.slice(0, this.Count);
+      return this.attacks.slice(0, 24);
     },
     attackEquipped() {
-      return this.attacks.filter((attack) => !attack.equipped);
+      return this.attacks.filter((attack) => !attack.equipped && !attack.on_sale);
     },
   },
   methods: {
@@ -65,6 +65,29 @@ export default {
         })
         .catch((error) => {
           console.error('Error fetching attack data:', error);
+        });
+    },
+
+    equipAttack(attack) {
+      const url = `https://balandrau.salle.url.edu/i3/players/attacks/${attack.attack_ID}`;
+
+      const headers = {
+        Bearer: localStorage.getItem('authToken'),
+        'Content-Type': 'application/json',
+      };
+
+      fetch(url, { method: 'POST', headers: headers })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(() => {
+          this.fetchAttackData();
+        })
+        .catch((error) => {
+          console.error('Error equipping attack:', error);
         });
     },
   },
