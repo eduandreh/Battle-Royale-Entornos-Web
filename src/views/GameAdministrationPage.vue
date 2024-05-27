@@ -69,4 +69,3 @@ const filterGames = ({ filter, searchText }) => {
 
 fetchGames();
 </script>
-
