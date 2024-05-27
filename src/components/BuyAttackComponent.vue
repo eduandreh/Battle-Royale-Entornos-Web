@@ -9,6 +9,7 @@
       >
         <h2 class="mt-2">Nombre: {{ attack.attack_ID }}</h2>
         <p>Posiciones: {{ attack.positions }}</p>
+        <p class="text-xl font-bold">$ {{ attack.price }}</p>
         <button class="bg-buttons text-white p-2 rounded-md w-1/2 m-5">
           Buy: {{ attack.price }} coins
         </button>

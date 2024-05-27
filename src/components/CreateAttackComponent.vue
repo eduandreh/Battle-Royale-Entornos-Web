@@ -62,7 +62,7 @@ export default {
       })
         .then((response) => {
           if (response.ok) {
-            alert('Creation successful');
+            response.status === 201;
           } else {
             throw new Error(`Creation failed: ${response.status}`);
           }
